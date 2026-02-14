@@ -1,0 +1,11 @@
+services:
+  jenkins:
+    container_name: jenkins
+    image:  jenkins/jenkins:2.544-slim-jdk21
+    restart: unless-stopped
+    ports:
+      - 80:8080
+    volumes:
+      - jenkins_home:/var/jenkins_home/
+volumes:
+  jenkins_home:
